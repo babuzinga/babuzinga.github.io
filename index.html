@@ -5,14 +5,91 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>KEEP CALM</title>
-<style>
-  body {background-color:#ae0301;position:relative;}
-  img {width:300px; display:block; margin:175px auto 0;top:50%;position:relative;}
-</style>
+  <style>
+    @font-face {
+      font-family: 'KeepCalm-Medium';
+      src: url('KeepCalm-Medium.ttf') format('truetype');
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #ae0301;
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    table {
+      width: 100%;
+      height: 100%;
+      text-align: center;
+    }
+    div {
+      opacity: 0;
+      transition: opacity 2s;
+    }
+    img {
+      width: 150px;
+      margin-bottom: 5px;
+    }
+    p {
+      color: white;
+      font-size: 50px;
+      line-height: 0.9;
+      font-family: "KeepCalm-Medium";
+    }
+    b {
+      color: #900603;
+      font-weight: normal;
+    }
+
+    @media only screen and (max-width: 320px) {
+      img {
+        width: 80px;
+        margin-bottom: 2px;
+      }
+      p {
+        font-size: 30px;
+        line-height: 1;
+      }
+    }
+  </style>
 </head>
 <body>
-<div>
-  <img src="keep-calm-and-hello-mazafaka.jpg.png" alt="hello-mazafaka"/>
-</div>
+
+<table>
+<tr>
+  <td>
+    <div id="hello">
+      <img src="crown.svg" alt="crown">
+      <p>KEEP<br>CALM</p>
+      <p id="and"></p>
+      <p><b>MAZAFAKA</b></p>
+    </div>
+  </td>
+</tr>
+</table>
+
+<script>
+  var and = [
+    'AND<br>HELLO',
+    'AND<br>RELAX',
+    'AND<br>STAY<br>STRONG',
+    'AND<br>DRINK<br>BEER',
+    'AND BE<br>A PRINCESS<br>TODAY',
+    'AND<br>HAKUNA<br>MATATA',
+    'AND<br>BE COOL',
+  ];
+      i = Math.floor(Math.random() * Math.floor(and.length));
+  document.getElementById('and').innerHTML = and[i];
+
+  setTimeout(function () {
+    document.getElementById('hello').style.opacity = 1;
+  }, 500);
+</script>
+
 </body>
 </html>
