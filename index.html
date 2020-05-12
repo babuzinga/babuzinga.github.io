@@ -29,11 +29,14 @@
     }
     div {
       opacity: 0;
-      transition: opacity 2s;
+      transition: opacity 3s;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
     }
     img {
       width: 150px;
-      margin-bottom: 5px;
+      margin-bottom: 10px;
     }
     p {
       color: white;
@@ -44,6 +47,21 @@
     b {
       color: #900603;
       font-weight: normal;
+    }
+    svg {
+
+    }
+
+    @media only screen and (max-width: 600px) {
+      img {
+        width: 100px;
+        margin-bottom: 5px;
+      }
+
+      p {
+        font-size: 40px;
+        line-height: 1;
+      }
     }
 
     @media only screen and (max-width: 320px) {
@@ -74,7 +92,7 @@
 </table>
 
 <script>
-  var and = [
+  var e = [
     'AND<br>HELLO',
     'AND<br>RELAX',
     'AND<br>STAY<br>STRONG',
@@ -83,12 +101,14 @@
     'AND<br>HAKUNA<br>MATATA',
     'AND<br>BE COOL',
   ];
-      i = Math.floor(Math.random() * Math.floor(and.length));
-  document.getElementById('and').innerHTML = and[i];
 
-  setTimeout(function () {
+  function s() {
+    let i = Math.floor(Math.random() * Math.floor(e.length));
+    document.getElementById('and').innerHTML = e[i];
     document.getElementById('hello').style.opacity = 1;
-  }, 500);
+  }
+
+  setTimeout(function () { s() }, 500);
 </script>
 
 </body>
